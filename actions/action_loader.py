@@ -33,7 +33,7 @@ class ActionLoader:
                 
                 try:
                     # Import the module
-                    module = importlib.import_module(f'.{module_name}', package='RightClickUtilities.actions')
+                    module = importlib.import_module(f'.{module_name}', package='RightclickActionsToolkit.actions')
                     
                     # Look for action instances in the module
                     for name, obj in inspect.getmembers(module):
@@ -103,3 +103,4 @@ class ActionLoader:
 
 # Create a global instance for easy importing
 action_loader = ActionLoader()
+
