@@ -1281,30 +1281,17 @@ class SettingsDialog(QDialog):
     
     def show_about(self):
         """Show information about the plugin."""
-        # Get enabled actions count
-        enabled_actions = self.action_registry.get_enabled_actions()
-        action_count = len(enabled_actions)
-        
-        # Create action list
-        action_names = [action.name for action in enabled_actions]
-        action_list = ", ".join(action_names) if action_names else "None"
-        
-        message = f"Right-click Utilities and Shortcuts Hub\n\n"
-        message += f"NEW: Custom Context Menu!\n"
-        message += f"- Hides built-in 'Copy Coordinates' by default for cleaner interface\n"
-        message += f"- Toggle 'Copy Coordinates' in General Settings if needed\n\n"
-        message += f"Universal Detection System:\n"
-        message += f"- Works anywhere on canvas (no layer selection required)\n"
-        message += f"- Detects points, multipoints, lines, multilines, polygons, multipolygons\n"
-        message += f"- Handles overlapping features with hierarchical menus\n"
-        message += f"- Extended search area for points and lines (10px tolerance)\n\n"
-        message += f"Hierarchical Action Scoping:\n"
-        message += f"- Feature Actions: Work on individual features\n"
-        message += f"- Layer Actions: Work on entire layers\n"
-        message += f"- Universal Actions: Work everywhere\n\n"
-        message += f"Currently Enabled Actions ({action_count}):\n"
-        message += f"{action_list}\n\n"
-        message += f"Right-click anywhere on the canvas to use the plugin!"
+        message = f"Right-click Utilities and Shortcuts Hub\n"
+        message += f"Version 0.9.2\n\n"
+        message += f"A universal right-click context menu plugin that automatically\n"
+        message += f"detects features anywhere on the canvas.\n\n"
+        message += f"Features:\n"
+        message += f"• Universal detection system (no layer selection needed)\n"
+        message += f"• Smart hierarchical menus for overlapping features\n"
+        message += f"• Extended search tolerance (10px for points/lines)\n"
+        message += f"• Modular action system\n\n"
+        message += f"Right-click anywhere on the canvas to use!\n\n"
+        message += f"Questions, suggestions? Contact me: kk.at.work@pm.me"
         
         QMessageBox.information(self, "About Right-click Utilities", message)
     
